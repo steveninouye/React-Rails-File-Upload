@@ -6,8 +6,9 @@ import {
 const documentReducer = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_DOCUMENTS:
+      return action.docs;
     case RECEIVE_DOCUMENT:
-
+      return state.concat([action.doc]);
     default:
       return state;
   }

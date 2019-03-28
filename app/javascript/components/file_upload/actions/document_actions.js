@@ -10,7 +10,7 @@ export const recieveDocs = (docs) => ({
 
 export const receiveDoc = (doc) => ({
   type: RECEIVE_FILE,
-  docs: [doc]
+  doc
 });
 
 export const sendFile = (id, file) => (dispatch) => {
