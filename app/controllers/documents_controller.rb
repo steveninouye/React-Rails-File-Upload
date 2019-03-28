@@ -1,12 +1,12 @@
 class DocumentsController < ApplicationController
   before_action :find_purchase_order, only: [:index, :show, :create]
-  protect_from_forgery :except => [:index, :show, :create]
 
   def index
     @documents = Document.joins(:purchase_order).where(purchase_order: @purchase_order)
   end
 
   def show
+    @document = Document.find_by_id()
   end
 
   def new
