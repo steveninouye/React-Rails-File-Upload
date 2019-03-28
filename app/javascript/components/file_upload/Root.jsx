@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import connect from 'react-redux';
 import PassingUpload from './components/PassingUpload';
+import { sendFile } from './actions/file_actions';
 
 class Root extends Component {
   handleChange(type) {
@@ -21,5 +23,8 @@ class Root extends Component {
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => ({});
+const mapDispatchToProps = { sendFile };
 
 export default Root;
