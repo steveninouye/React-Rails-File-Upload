@@ -2,7 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import documentReducer from './document_reducer';
+import documentReducer from './docment_reducer';
 
 const rootReducer = combineReducers({
   documents: documentReducer

@@ -5,7 +5,6 @@ import PassingUpload from './components/PassingUpload';
 import BOLUpload from './components/BOLUpload';
 import BOCUpload from './components/BOCUpload';
 import DocumentsContainer from './components/DocumentsContainer';
-import { sendFile } from './actions/document_actionsions';
 import configureStore from './reducers/root_reducer';
 
 class Root extends Component {
@@ -15,19 +14,19 @@ class Root extends Component {
       const formData = new FormData();
       formData.append('document[file]', file);
       formData.append('document[document_type]', type);
-      sendFile(id, formData);
+      // sendFile(id, formData);
     };
   };
 
   render() {
-    const { handleChange } = this;
+    const { addId } = this;
     return (
       <Provider store={configureStore({})}>
         <div>
-          <PassingUpload handleChange={this.addId(this.props.id)} />
-          <BOLUpload handleChange={this.addId(this.props.id)} />
-          <BOCUpload handleChange={this.addId(this.props.id)} />
-          <DocumentsContainer />
+          <PassingUpload handleChange={addId(this.props.id)} />
+          <BOLUpload handleChange={addId(this.props.id)} />
+          <BOCUpload handleChange={addId(this.props.id)} />
+          <DocumentsContainer purchaseOrderId={this.props.id} />
         </div>
       </Provider>
     );
