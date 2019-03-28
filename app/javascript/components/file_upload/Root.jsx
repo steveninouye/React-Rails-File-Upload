@@ -1,11 +1,19 @@
-import React from 'react';
-import HelloWorld from './HelloWorld';
+import React, { Component } from 'react';
+import PassingUpload from './components/PassingUpload';
 
-const Root = (props) => (
-  <React.Fragment>
-    Root Component
-    <HelloWorld />
-  </React.Fragment>
-);
+class Root extends Component {
+  handleChange(type) {}
+
+  render() {
+    const { handleChange } = this;
+    
+    return (
+      <React.Fragment>
+        Root Component
+        <PassingUpload handleChange={handleChange} />
+      </React.Fragment>
+    );
+  }
+}
 
 export default Root;
