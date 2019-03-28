@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import PassingUpload from './components/PassingUpload';
+import BOLUpload from './components/BOLUpload';
+import BOCUpload from './components/BOCUpload';
 import { sendFile } from './actions/file_actions';
 
 class Root extends Component {
@@ -19,6 +22,8 @@ class Root extends Component {
       <React.Fragment>
         Root Component
         <PassingUpload handleChange={handleChange} />
+        <BOLUpload handleChange={handleChange} />
+        <BOCUpload handleChange={handleChange} />
       </React.Fragment>
     );
   }
