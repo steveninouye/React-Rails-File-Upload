@@ -9,6 +9,7 @@ class PurchaseOrdersController < ApplicationController
   end
 
   def create
+    render json: ["hello world"]
   end
 
   def edit
@@ -18,5 +19,11 @@ class PurchaseOrdersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def purchase_order_params
+    params.require(:purchase_order).permit(:document, :document_type)
   end
 end
