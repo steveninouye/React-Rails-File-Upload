@@ -6,7 +6,8 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @document = Document.find_by_id()
+    @document = Document.find_by_id(params[:id])
+    redirect_to url_for(@document.file)
   end
 
   def new
