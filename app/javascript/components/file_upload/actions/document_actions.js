@@ -14,7 +14,7 @@ export const receiveDoc = (doc) => ({
 });
 
 export const getDocuments = (purchaseOrderId) => (dispatch) => {
-  Services.get(`/purchase_orders/${purchaseOrderId}`)
+  Services.get(`/purchase_orders/${purchaseOrderId}/documents`)
     .then((data) => dispatch(recieveDocs(data)))
     .catch((err) => console.log(err));
 };
