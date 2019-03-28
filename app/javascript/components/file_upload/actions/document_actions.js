@@ -1,4 +1,4 @@
-import { postFile } from '../services';
+import * as Services from '../services';
 
 export const RECEIVE_DOCUMENT = 'RECEIVE_DOCUMENT';
 export const RECEIVE_DOCUMENTS = 'RECEIVE_DOCUMENTS';
@@ -13,8 +13,14 @@ export const receiveDoc = (doc) => ({
   doc
 });
 
-export const sendFile = (id, file) => (dispatch) => {
-  postFile(`/purchase_orders/${id}/documents`, file)
+export const getDocuments = (purchaseOrderId) => (dispatch) => {
+  Services.get(`/purchase_orders/${purchaseOrderId}`)
     .then((data) => dispatch(recieveDocs(data)))
+    .catch((err) => console.log(err));
+};
+
+export const sendFile = (purchaseOrderId, file) => (dispatch) => {
+  Services.postFile(`/purchase_orders/${purchaseOrderId}/documents`, file)
+    .then((data) => dispatch(recieveDoc(data[0])))
     .catch((err) => console.log(err));
 };
