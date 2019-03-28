@@ -2,14 +2,10 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import docmentReducer from './document_reducer';
+import documentReducer from './document_reducer';
 
 const rootReducer = combineReducers({
-  temp: documentReducer
-  // entities,
-  // session,
-  // errors,
-  // ui
+  documents: documentReducer
 });
 
 const configureStore = (preloadedState = {}) =>
