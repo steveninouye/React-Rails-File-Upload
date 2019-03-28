@@ -16,9 +16,9 @@ class DocumentsController < ApplicationController
     @document = Document.new(document_params)
     @document.purchase_order_id = params[:purchase_order_id]
     if @document.save
-      render json: ["Document uploaded"]
+      render :create
     else
-      render json: ["error"]
+      render json: @document.errors.full_messages
     end
   end
 
