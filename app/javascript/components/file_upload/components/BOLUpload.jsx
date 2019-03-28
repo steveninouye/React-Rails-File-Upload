@@ -2,6 +2,7 @@ import React from 'react';
 
 const BOLUpload = ({ handleChange }) => (
   <React.Fragment>
+    <h2>Upload BOL Document</h2>
     <input
       type="file"
       accept="image/*,application/pdf"

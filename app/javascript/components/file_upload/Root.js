@@ -20,7 +20,6 @@ class Root extends Component {
     const { handleChange } = this;
     return (
       <React.Fragment>
-        Root Component
         <PassingUpload handleChange={this.addId(this.props.id)} />
         <BOLUpload handleChange={this.addId(this.props.id)} />
         <BOCUpload handleChange={this.addId(this.props.id)} />

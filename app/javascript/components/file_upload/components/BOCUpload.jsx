@@ -2,6 +2,7 @@ import React from 'react';
 
 const BOCUpload = ({ handleChange }) => (
   <React.Fragment>
+    <h2>Upload BOC Document</h2>
     <input
       type="file"
       accept="image/*,application/pdf"
