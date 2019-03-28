@@ -5,8 +5,7 @@ import PassingUpload from './components/PassingUpload';
 import BOLUpload from './components/BOLUpload';
 import BOCUpload from './components/BOCUpload';
 import DocumentsContainer from './components/DocumentsContainer';
-import { sendFile } from './actions/file_actions';
-import Documents from './components/Documents';
+import { sendFile } from './actions/document_actionsions';
 import configureStore from './reducers/root_reducer';
 
 class Root extends Component {

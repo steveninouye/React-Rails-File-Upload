@@ -2,10 +2,10 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import tempReducer from './temp_reducer';
+import docmentReducer from './document_reducer';
 
 const rootReducer = combineReducers({
-  temp: tempReducer
+  temp: documentReducer
   // entities,
   // session,
   // errors,
