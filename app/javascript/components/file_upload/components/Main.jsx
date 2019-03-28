@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
 
 import PassingUpload from './PassingUpload';
 import BOLUpload from './BOLUpload';
@@ -7,9 +6,14 @@ import BOCUpload from './BOCUpload';
 import DocumentsContainer from './DocumentsContainer';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
   handleChange(type) {
+    const { sendFile, purchaseOrderId } = this.props;
     return (e) => {
-      const { sendFile, purchaseOrderId } = this.props;
       const file = e.target.files[0];
       const formData = new FormData();
       formData.append('document[file]', file);

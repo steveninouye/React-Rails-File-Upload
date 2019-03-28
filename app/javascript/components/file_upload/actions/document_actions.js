@@ -9,7 +9,7 @@ export const recieveDocs = (docs) => ({
 });
 
 export const receiveDoc = (doc) => ({
-  type: RECEIVE_FILE,
+  type: RECEIVE_DOCUMENT,
   doc
 });
 
@@ -21,6 +21,6 @@ export const getDocuments = (purchaseOrderId) => (dispatch) => {
 
 export const sendFile = (purchaseOrderId, file) => (dispatch) => {
   Services.postFile(`/purchase_orders/${purchaseOrderId}/documents`, file)
-    .then((data) => dispatch(recieveDoc(data[0])))
+    .then((data) => dispatch(receiveDoc(data)))
     .catch((err) => console.log(err));
 };
