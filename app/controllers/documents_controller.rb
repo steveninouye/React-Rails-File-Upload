@@ -1,5 +1,9 @@
 class DocumentsController < ApplicationController
+  before_action :find_purchase_order, only: [:index, :show, :create]
+  protect_from_forgery :except => [:index, :show, :create]
+
   def index
+    @documents = Document.joins(:purchase_order).where(purchase_order: @purchase_order)
   end
 
   def show
@@ -33,5 +37,9 @@ class DocumentsController < ApplicationController
     params.require(:document).permit(:document_type, :file)
     ##### For handling multiple documents in a single upload
     # params.require(:purchase_order).permit(:type, files: [])
+  end
+
+  def find_purchase_order
+    @purchase_order = PurchaseOrder.find_by_id(params[:purchase_order_id])
   end
 end
