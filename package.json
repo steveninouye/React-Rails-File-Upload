@@ -2,7 +2,8 @@
   "name": "file_upload",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.2"
+    "@rails/webpacker": "^4.0.2",
+    "react_ujs": "^2.4.4"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.2.1"
