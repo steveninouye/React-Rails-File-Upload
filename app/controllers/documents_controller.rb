@@ -30,7 +30,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:type, :file)
+    params.require(:document).permit(:document_type, :file)
     ##### For handling multiple documents in a single upload
     # params.require(:purchase_order).permit(:type, files: [])
   end

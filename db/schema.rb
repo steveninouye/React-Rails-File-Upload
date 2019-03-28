@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_03_28_161146) do
   end
 
   create_table "documents", force: :cascade do |t|
-    t.string "type"
+    t.string "document_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "purchase_order_id"

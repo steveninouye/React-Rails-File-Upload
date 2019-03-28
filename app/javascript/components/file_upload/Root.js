@@ -10,8 +10,8 @@ class Root extends Component {
     return (e) => {
       const file = e.target.files[0];
       const formData = new FormData();
-      formData.append('purchase_order[document]', file);
-      formData.append('purchase_order[document_type]', type);
+      formData.append('document[file]', file);
+      formData.append('document[document_type]', type);
       sendFile(id, formData);
     };
   };
