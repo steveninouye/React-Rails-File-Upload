@@ -3,4 +3,4 @@
 <h1><%= @purchase_order.title %></h1>
 <h2>PurchaseOrders#show</h2>
 
-<%= react_component("Root") %>
+<%= react_component("Root", {id: @purchase_order.id}) %>

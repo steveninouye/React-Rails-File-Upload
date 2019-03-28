@@ -3,7 +3,7 @@ class PurchaseOrdersController < ApplicationController
   end
 
   def show
-    @purchase_order = PurchaseOrder.find_by_id(params[:id])
+    @purchase_order = PurchaseOrder.includes(:documents).find_by_id(params[:id])
   end
 
   def new

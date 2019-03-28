@@ -7,8 +7,8 @@ export const receiveFile = (file) => ({
   file
 });
 
-export const sendFile = (file) /*=> (dispatch)*/ => {
-  postFile('/purchase_orders', file)
+export const sendFile = (id, file) /*=> (dispatch)*/ => {
+  postFile(`/purchase_orders/${id}/documents`, file)
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
 };
