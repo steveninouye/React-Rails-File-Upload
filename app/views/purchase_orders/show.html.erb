@@ -1,2 +1,6 @@
-<h1>PurchaseOrders#show</h1>
-<p>Find me in app/views/purchase_orders/show.html.erb</p>
+<%= javascript_pack_tag 'file_upload' %>
+
+<h1><%= @purchase_order.title %></h1>
+<h2>PurchaseOrders#show</h2>
+
+<%= react_component("Root") %>
