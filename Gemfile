@@ -7,6 +7,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.3'
 gem 'webpacker'
 gem 'react-rails'
+gem 'aws-sdk-s3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
