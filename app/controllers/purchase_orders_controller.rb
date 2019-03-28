@@ -9,7 +9,6 @@ class PurchaseOrdersController < ApplicationController
   end
 
   def create
-    byebug
     render json: ["hello world"]
   end
 
